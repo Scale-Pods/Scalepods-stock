@@ -1,0 +1,80 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1918 >>
+stream
+0.12 0.20 0.35 rg 0 770 595 72 re f 0 g
+1 g
+BT /F2 17 Tf 40 810 Td (ORION BOILERS PVT LTD) Tj ET
+BT /F1 9 Tf 40 790 Td (Plot 14, Industrial Estate, Vadodara, Gujarat  |  GSTIN 24ABCDE1234F1Z5) Tj ET
+0 g
+BT /F2 15 Tf 40 745 Td (PURCHASE ORDER) Tj ET
+BT /F2 10 Tf 380 745 Td (PO No: PO/26-27/130) Tj ET
+BT /F1 10 Tf 380 730 Td (Date: 12 Nov 2026) Tj ET
+BT /F1 10 Tf 40 715 Td (To: Northwind Pipes & Fittings, Mumbai) Tj ET
+BT /F1 10 Tf 40 700 Td (Please supply the following material as per the terms below.) Tj ET
+0.92 0.92 0.92 rg 40 652 530 18 re f 0 g
+BT /F2 9 Tf 44 658 Td (Sr) Tj ET
+BT /F2 9 Tf 74 658 Td (Description) Tj ET
+BT /F2 9 Tf 264 658 Td (Size \(mm\)) Tj ET
+BT /F2 9 Tf 374 658 Td (Qty \(kg\)) Tj ET
+BT /F2 9 Tf 444 658 Td (Rate / kg) Tj ET
+BT /F2 9 Tf 504 658 Td (Amount) Tj ET
+BT /F1 9 Tf 44 639 Td (1) Tj ET
+BT /F1 9 Tf 74 639 Td (SA 387 GR 22 CL2 plate) Tj ET
+BT /F1 9 Tf 264 639 Td (12 x 2000 x 6000) Tj ET
+BT /F1 9 Tf 374 639 Td (8000) Tj ET
+BT /F1 9 Tf 444 639 Td (136) Tj ET
+BT /F1 9 Tf 504 639 Td (1088000) Tj ET
+BT /F1 9 Tf 44 621 Td (2) Tj ET
+BT /F1 9 Tf 74 621 Td (SA 387 GR 22 CL2 plate) Tj ET
+BT /F1 9 Tf 264 621 Td (16 x 2000 x 8000) Tj ET
+BT /F1 9 Tf 374 621 Td (5000) Tj ET
+BT /F1 9 Tf 444 621 Td (136) Tj ET
+BT /F1 9 Tf 504 621 Td (680000) Tj ET
+0.6 w 40 670 m 570 670 l S
+0.6 w 40 652 m 570 652 l S
+0.6 w 40 634 m 570 634 l S
+0.6 w 40 616 m 570 616 l S
+0.6 w 40 670 m 40 616 l S
+0.6 w 70 670 m 70 616 l S
+0.6 w 260 670 m 260 616 l S
+0.6 w 370 670 m 370 616 l S
+0.6 w 440 670 m 440 616 l S
+0.6 w 500 670 m 500 616 l S
+0.6 w 570 670 m 570 616 l S
+BT /F1 10 Tf 40 586 Td (Payment: 30 days from invoice date) Tj ET
+BT /F1 10 Tf 40 571 Td (Delivery: ex stock, within 7 days of order) Tj ET
+BT /F1 10 Tf 40 556 Td (Test certificates \(EN 10204 3.1\) to accompany the material.) Tj ET
+BT /F2 10 Tf 40 506 Td (For Orion Boilers Pvt Ltd) Tj ET
+BT /F1 9 Tf 40 466 Td (Authorised signatory) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000002221 00000 n 
+0000002291 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2366
+%%EOF

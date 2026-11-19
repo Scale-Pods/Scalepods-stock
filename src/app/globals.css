@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/* dark mode follows the .dark class set by the theme switch */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Option C · Industrial Editorial. Northwind teal + orange, warm paper, dark steel sidebar.
+   Every colour is a token, so dark mode is a second set of values, not a second set of classes. */
+:root {
+  --brand: #0a76ad;
+  --brand-dark: #075a86;
+  --brand-soft: #e8f3f9;
+  --accent: #f26522;
+  --accent-soft: #fff0e7;
+  --ink: #18222d;
+  --muted: #66707a;
+  --line: #e7e2da;
+  --grid: #d9d2c6;   /* the lines between table columns and rows */
+  --surface: #f7f5f2;
+  --card: #ffffff;
+  --field: #ffffff;
+  --steel: #1d2733;
+  --steel-ink: #c9d3dd;
+  --steel-muted: #7f8c99;
+  --ok: #1f8f64;
+  --ok-soft: #e9f7f0;
+  --warn: #a86400;
+  --warn-soft: #fdf3e2;
+  --bad: #c0392b;
+  --bad-soft: #fdecea;
+  --info-soft: #e8f3f9;
+  --skel-a: #ece7e0;
+  --skel-b: #f7f4f0;
+  /* charts: validated with the dataviz palette checker (lightness, chroma, colour-blind separation, contrast) */
+  --chart-in: #0a76ad;
+  --chart-out: #f26522;
+  --chart-grid: #ece7e0;
+  --chart-axis: #7a838c;
+  --seq-1: #e3f1f8; --seq-2: #b9dcee; --seq-3: #7fc0e1; --seq-4: #3b97c8; --seq-5: #0a6797;
+  color-scheme: light;
+}
+
+:root.dark {
+  --brand: #3aa6dc;
+  --brand-dark: #7cc6ec;
+  --brand-soft: #14293a;
+  --accent: #ff7a3d;
+  --accent-soft: #3a2117;
+  --ink: #e6ebf0;
+  --muted: #93a0ad;
+  --line: #27313c;
+  --grid: #3b4857;
+  --surface: #0f141a;
+  --card: #161d25;
+  --field: #1b232d;
+  --steel: #0a0f15;
+  --steel-ink: #c9d3dd;
+  --steel-muted: #6d7a87;
+  --ok: #4cc795;
+  --ok-soft: #12291f;
+  --warn: #f0b44c;
+  --warn-soft: #2e2412;
+  --bad: #ff7b6e;
+  --bad-soft: #351816;
+  --info-soft: #14293a;
+  --skel-a: #1d2530;
+  --skel-b: #26303c;
+  --chart-in: #2d93c8;
+  --chart-out: #e8692e;
+  --chart-grid: #232d38;
+  --chart-axis: #8b97a3;
+  --seq-1: #19303f; --seq-2: #1d4a63; --seq-3: #236b8f; --seq-4: #2d8fc2; --seq-5: #63b8e3;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-grid: var(--grid);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-field: var(--field);
+  --color-steel: var(--steel);
+  --color-steel-ink: var(--steel-ink);
+  --color-steel-muted: var(--steel-muted);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-info-soft: var(--info-soft);
+  --font-sans: var(--font-body), var(--font-deva), "Segoe UI", system-ui, sans-serif;
+  --font-display: var(--font-head), var(--font-body), "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+html {
+  font-size: 15.5px;
+}
+/* big monitors: everything is sized in rem, so growing the root size makes the whole app fill the screen in proportion
+   (laptops stay as they are; the size grows gently above 1536px and stops at 20px for 27-inch and wider screens) */
+@media (min-width: 1536px) {
+  html { font-size: min(20px, calc(15.5px + (100vw - 1536px) * 0.0045)); }
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Every table gets a thin vertical line between its columns (the horizontal row lines were already there), so the columns read as separate.
+   Light and dark follow --grid. A table that should stay plain takes the class no-grid. */
+table:not(.no-grid) :is(th, td):not(:last-child) { border-right: 1px solid var(--grid); }
+table:not(.no-grid) :is(th, td) { border-bottom-color: var(--grid); }
+table:not(.no-grid) tr { border-color: var(--grid); }
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* scrollbars: thin, no arrow buttons, quiet colours that follow light and dark mode */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-button { display: none; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background-color: var(--line); border: 2px solid transparent; border-radius: 999px; background-clip: content-box; }
+*::-webkit-scrollbar-thumb:hover { background-color: var(--muted); }
+/* the sidebar: the bar only shows while the pointer is over it */
+.nav-scroll { scrollbar-color: transparent transparent; }
+.nav-scroll:hover { scrollbar-color: rgba(255, 255, 255, 0.18) transparent; }
+.nav-scroll::-webkit-scrollbar-thumb { background-color: transparent; }
+.nav-scroll:hover::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0.18); }
+
+/* brushed steel: login panel and accents */
+.steel-panel {
+  background:
+    linear-gradient(180deg, rgba(13, 22, 32, 0.05), rgba(13, 22, 32, 0.78)),
+    repeating-linear-gradient(90deg, #8e9aa6 0 2px, #9aa6b2 2px 5px, #87939f 5px 7px),
+    linear-gradient(#a3afbb, #6f7c88);
+  background-blend-mode: normal, multiply, normal;
+}
+
+/* loading states */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--skel-a) 25%, var(--skel-b) 37%, var(--skel-a) 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 4px;
+}
+@keyframes progress-run {
+  0% { width: 0; opacity: 1; }
+  100% { width: 88%; opacity: 1; }
+}
+@keyframes progress-done {
+  0% { width: 88%; opacity: 1; }
+  60% { width: 100%; opacity: 1; }
+  100% { width: 100%; opacity: 0; }
+}
+.nav-progress-run { animation: progress-run 12s cubic-bezier(0.1, 0.7, 0.2, 1) forwards; }
+.nav-progress-done { animation: progress-done 0.45s ease-out forwards; }
+@keyframes logo-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.985); }
+  50% { opacity: 1; transform: scale(1); }
+}
+.logo-breathe { animation: logo-breathe 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton, .logo-breathe, .nav-progress-run { animation: none; }
+}
+
+/* the Tally sync bar while the PC has not started yet: a bar that slides back and forth */
+@keyframes sync-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(260%); }
+}
+.sync-slide { animation: sync-slide 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .sync-slide { animation: none; width: 100%; opacity: 0.4; }
+}
+
+/* grid children may shrink below their content, so a wide chart never pushes a phone screen sideways */
+.grid > * { min-width: 0; }

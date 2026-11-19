@@ -1,0 +1,80 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1986 >>
+stream
+0.12 0.20 0.35 rg 0 770 595 72 re f 0 g
+1 g
+BT /F2 17 Tf 40 810 Td (MERIDIAN STEEL WORKS) Tj ET
+BT /F1 9 Tf 40 790 Td (Works: Industrial Area, Bhilai, Chhattisgarh  |  GSTIN 22AAAMS1111A1Z3) Tj ET
+0 g
+BT /F2 15 Tf 40 745 Td (TAX INVOICE) Tj ET
+BT /F2 10 Tf 380 745 Td (Invoice No: MSW/26-27/1200) Tj ET
+BT /F1 10 Tf 380 730 Td (Date: 3 Nov 2026) Tj ET
+BT /F1 10 Tf 40 715 Td (Billed to: Northwind Pipes & Fittings, Mumbai  |  GSTIN 27AAAFN1234A1Z5) Tj ET
+0.92 0.92 0.92 rg 40 672 555 18 re f 0 g
+BT /F2 9 Tf 44 678 Td (Description) Tj ET
+BT /F2 9 Tf 214 678 Td (HSN) Tj ET
+BT /F2 9 Tf 259 678 Td (Heat no) Tj ET
+BT /F2 9 Tf 329 678 Td (Size \(mm\)) Tj ET
+BT /F2 9 Tf 429 678 Td (Weight kg) Tj ET
+BT /F2 9 Tf 489 678 Td (Rate) Tj ET
+BT /F2 9 Tf 529 678 Td (Amount) Tj ET
+BT /F1 9 Tf 44 659 Td (SA 387 GR 22 CL2 plate) Tj ET
+BT /F1 9 Tf 214 659 Td (7225) Tj ET
+BT /F1 9 Tf 259 659 Td (40100SA) Tj ET
+BT /F1 9 Tf 329 659 Td (12 x 2000 x 6000) Tj ET
+BT /F1 9 Tf 429 659 Td (14000) Tj ET
+BT /F1 9 Tf 489 659 Td (128) Tj ET
+BT /F1 9 Tf 529 659 Td (1792000) Tj ET
+0.6 w 40 690 m 595 690 l S
+0.6 w 40 672 m 595 672 l S
+0.6 w 40 654 m 595 654 l S
+0.6 w 40 690 m 40 654 l S
+0.6 w 210 690 m 210 654 l S
+0.6 w 255 690 m 255 654 l S
+0.6 w 325 690 m 325 654 l S
+0.6 w 425 690 m 425 654 l S
+0.6 w 485 690 m 485 654 l S
+0.6 w 525 690 m 525 654 l S
+0.6 w 595 690 m 595 654 l S
+BT /F1 10 Tf 380 629 Td (Taxable value: Rs 1792000) Tj ET
+BT /F1 10 Tf 380 614 Td (CGST 9%: Rs 161280) Tj ET
+BT /F1 10 Tf 380 599 Td (SGST 9%: Rs 161280) Tj ET
+BT /F2 11 Tf 380 582 Td (Total: Rs 2114560) Tj ET
+BT /F2 10 Tf 40 629 Td (Company's Bank Details) Tj ET
+BT /F1 9 Tf 40 614 Td (A/c Holder: MERIDIAN STEEL WORKS) Tj ET
+BT /F1 9 Tf 40 601 Td (Bank: HDFC Bank Ltd.) Tj ET
+BT /F1 9 Tf 40 588 Td (A/c No: 50200012345678) Tj ET
+BT /F1 9 Tf 40 575 Td (Branch & IFSC: Main Branch, HDFC0000212) Tj ET
+BT /F1 8 Tf 40 534 Td (Declaration: goods are supplied against the order of the buyer. Subject to Mumbai jurisdiction.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000002289 00000 n 
+0000002359 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2434
+%%EOF

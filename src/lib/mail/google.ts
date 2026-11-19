@@ -1,0 +1,61 @@
+import "server-only";
+import { fakeGet, fakeWrite } from "./fakeGmail";
+
+// Google sign-in and the Gmail API, by plain web calls (no extra package). The one permission asked for is gmail.modify: read mail, write drafts, send, and organise
+// (star, archive, mark read, trash). It does not allow deleting mail for good. A mailbox connected earlier with read-only access keeps working for reading; sending and
+// changes need it to be connected again (live.ts checks which permission a login holds).
+
+const AUTH = "https://accounts.google.com/o/oauth2/v2/auth";
+const TOKEN = "https://oauth2.googleapis.com/token";
+const API = "https://gmail.googleapis.com/gmail/v1/users/me";
+export const SCOPE = "https://www.googleapis.com/auth/gmail.modify";
+
+/** A Gmail call that changes something (POST, PUT, DELETE). Returns the JSON answer, or null when Gmail answers with nothing. */
+export async function gmailWrite<T>(token: string, method: "POST" | "PUT" | "DELETE", path: string, body?: unknown): Promise<T | null> {
+  return fakeWrite<T>(token, method, path, body);
+}
+
+/** The address Google sends the person back to: the app's own address plus the callback path (it must match what is registered in Google Cloud). */
+export const redirectUri = (origin: string) => `${process.env.APP_ORIGIN || origin}/api/mail/google/callback`;
+
+export function authUrl(_origin: string, _state: string): string {
+  void _origin; void _state;
+  throw new Error("Connecting a new Google account is switched off in this demonstration. The sample mailboxes are already connected.");
+}
+
+export const exchangeCode = async (_code: string, _origin: string): Promise<{ access_token: string; refresh_token?: string }> => {
+  void _code; void _origin;
+  throw new Error("Connecting a new Google account is switched off in this demonstration.");
+};
+export const accessToken = async (refresh: string) => (refresh.startsWith("demo:") ? refresh : `demo:${refresh}`);
+
+export async function gmail<T>(token: string, path: string, params: Record<string, string | string[]> = {}): Promise<T> {
+  return fakeGet<T>(token, path, params);
+}
+
+// ---------------------------------------------------------------- a message, as Gmail returns it
+export type Part = { mimeType?: string; filename?: string; headers?: { name: string; value: string }[]; body?: { size?: number; data?: string; attachmentId?: string }; parts?: Part[] };
+export type Message = { id: string; threadId: string; internalDate?: string; payload: Part };
+
+const b64url = (s: string) => Buffer.from(s.replace(/-/g, "+").replace(/_/g, "/"), "base64").toString("utf8");
+export const header = (m: Message, name: string) => m.payload.headers?.find((h) => h.name.toLowerCase() === name.toLowerCase())?.value ?? null;
+
+export type Found = { html: string[]; text: string[]; files: { name: string; mime: string; attachmentId: string; size: number }[] };
+/** The bodies and the attachments of a message, wherever they sit in its parts. */
+export function collect(part: Part, out: Found = { html: [], text: [], files: [] }): Found {
+  const mime = (part.mimeType ?? "").toLowerCase();
+  if (part.filename && part.body?.attachmentId) out.files.push({ name: part.filename, mime, attachmentId: part.body.attachmentId, size: part.body.size ?? 0 });
+  else if (part.filename && part.body?.data) { // a small attachment can arrive inline
+    (mime === "text/html" ? out.html : out.text).push(b64url(part.body.data));
+  } else if (!part.filename && part.body?.data) {
+    if (mime === "text/html") out.html.push(b64url(part.body.data));
+    else if (mime === "text/plain") out.text.push(b64url(part.body.data));
+  }
+  for (const p of part.parts ?? []) collect(p, out);
+  return out;
+}
+
+export async function attachmentText(token: string, messageId: string, attachmentId: string): Promise<string> {
+  const j = await gmail<{ data?: string }>(token, `/messages/${messageId}/attachments/${attachmentId}`);
+  return j.data ? b64url(j.data) : "";
+}
